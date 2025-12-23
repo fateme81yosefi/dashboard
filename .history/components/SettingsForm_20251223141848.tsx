@@ -142,25 +142,33 @@ export default function SettingsForm() {
         </div>
 
         <div className="space-y-4">
-          <Select
-            label={t('systemLanguage')}
-            value={language}
-            onChange={(value) => setLanguage(value as 'fa' | 'en')}
-            options={[
-              { value: 'fa', label: 'فارسی' },
-              { value: 'en', label: 'English' },
-            ]}
-          />
+          <div>
+            <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
+              {t('systemLanguage')}
+            </label>
+            <select
+              value={language}
+              onChange={(e) => setLanguage(e.target.value as 'fa' | 'en')}
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="fa">فارسی</option>
+              <option value="en">English</option>
+            </select>
+          </div>
 
-          <Select
-            label={t('displayTheme')}
-            value={theme}
-            onChange={(value) => setTheme(value as 'light' | 'dark')}
-            options={[
-              { value: 'light', label: t('light') },
-              { value: 'dark', label: t('dark') },
-            ]}
-          />
+          <div>
+            <label className="block text-sm font-medium text-gray-900 dark:text-white mb-2">
+              {t('displayTheme')}
+            </label>
+            <select
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as 'light' | 'dark')}
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-primary-500"
+            >
+              <option value="light">{t('light')}</option>
+              <option value="dark">{t('dark')}</option>
+            </select>
+          </div>
         </div>
       </div>
 

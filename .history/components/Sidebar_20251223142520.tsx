@@ -24,6 +24,7 @@ const menuItems = [
   { icon: Users, labelKey: 'users' as const, href: '/users' },
   { icon: BarChart3, labelKey: 'reports' as const, href: '/reports' },
   { icon: FileText, labelKey: 'docs' as const, href: '/docs' },
+  { icon: Calendar, labelKey: 'calendar' as const, href: '/calendar' },
   { icon: TrendingUp, labelKey: 'analytics' as const, href: '/analytics' },
   { icon: Bell, labelKey: 'notifications' as const, href: '/notifications' },
   { icon: Settings, labelKey: 'settings' as const, href: '/settings' },
@@ -59,12 +60,12 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
         <div className="flex flex-col h-full">
           {/* Header */}
           <div className={cn(
-            'flex items-center  transition-all duration-300',
+            'flex items-center border-b border-gray-200 dark:border-gray-700 transition-all duration-300',
             isCollapsed ? 'justify-center p-4' : 'justify-between p-6'
           )}>
             {!isCollapsed && (
               <div className="flex items-center space-x-3 space-x-reverse flex-1">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg mx-3 flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center shadow-lg">
                   <LayoutDashboard className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -170,7 +171,24 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
             </div>
           </nav>
 
-      
+          {/* Footer - Only show when not collapsed */}
+          {!isCollapsed && (
+            <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center space-x-3 space-x-reverse p-3 rounded-lg bg-gradient-to-r from-primary-50 to-primary-100 dark:from-primary-900/20 dark:to-primary-800/20">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center">
+                  <User className="w-5 h-5 text-white" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-gray-900 dark:text-white truncate">
+                    {t('systemAdmin')}
+                  </p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400 truncate">
+                    admin@example.com
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </aside>
     </>

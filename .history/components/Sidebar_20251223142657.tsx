@@ -24,6 +24,7 @@ const menuItems = [
   { icon: Users, labelKey: 'users' as const, href: '/users' },
   { icon: BarChart3, labelKey: 'reports' as const, href: '/reports' },
   { icon: FileText, labelKey: 'docs' as const, href: '/docs' },
+  { icon: Calendar, labelKey: 'calendar' as const, href: '/calendar' },
   { icon: TrendingUp, labelKey: 'analytics' as const, href: '/analytics' },
   { icon: Bell, labelKey: 'notifications' as const, href: '/notifications' },
   { icon: Settings, labelKey: 'settings' as const, href: '/settings' },

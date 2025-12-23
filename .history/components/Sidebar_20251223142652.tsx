@@ -24,6 +24,7 @@ const menuItems = [
   { icon: Users, labelKey: 'users' as const, href: '/users' },
   { icon: BarChart3, labelKey: 'reports' as const, href: '/reports' },
   { icon: FileText, labelKey: 'docs' as const, href: '/docs' },
+  { icon: Calendar, labelKey: 'calendar' as const, href: '/calendar' },
   { icon: TrendingUp, labelKey: 'analytics' as const, href: '/analytics' },
   { icon: Bell, labelKey: 'notifications' as const, href: '/notifications' },
   { icon: Settings, labelKey: 'settings' as const, href: '/settings' },
@@ -64,7 +65,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
           )}>
             {!isCollapsed && (
               <div className="flex items-center space-x-3 space-x-reverse flex-1">
-                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg mx-3 flex items-center justify-center shadow-lg">
+                <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg  flex items-center justify-center shadow-lg">
                   <LayoutDashboard className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
