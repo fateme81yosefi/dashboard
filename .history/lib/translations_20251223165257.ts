@@ -1,7 +1,7 @@
 export const translations = {
   fa: {
     // Navigation
-    dashboard: 'داشبورد من',
+    dashboard: 'داشبورد ',
     users: 'کاربران',
     reports: 'گزارش‌ها',
     docs: 'مستندات',
