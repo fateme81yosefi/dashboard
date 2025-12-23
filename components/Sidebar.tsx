@@ -16,6 +16,11 @@ const menuItems = [
   { icon: 'lucide:settings', labelKey: 'settings' as const, href: '/settings' },
 ]
 
+const authItems = [
+  { icon: 'lucide:log-in', labelKey: 'login' as const, href: '/login' },
+  { icon: 'lucide:user-plus', labelKey: 'register' as const, href: '/register' },
+]
+
 interface SidebarProps {
   isOpen: boolean
   isCollapsed: boolean
@@ -153,6 +158,64 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
                   </Link>
                 )
               })}
+            </div>
+
+            {/* Auth Section */}
+            <div className={cn('mt-4 pt-4 border-t border-gray-200 dark:border-gray-700', isCollapsed && 'mt-2 pt-2')}>
+              <div className={cn('space-y-2', isCollapsed && 'space-y-1')}>
+                {authItems.map((item) => {
+                  const isActive = pathname === item.href
+                  return (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      onClick={() => {
+                        // Close mobile sidebar on navigation
+                        if (window.innerWidth < 1024) {
+                          onClose()
+                        }
+                      }}
+                      className={cn(
+                        'flex items-center rounded-lg transition-all duration-200 group relative',
+                        isCollapsed ? 'justify-center px-3 py-3' : 'px-4 py-3',
+                        isActive
+                          ? 'bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-400 shadow-sm'
+                          : 'text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700'
+                      )}
+                      title={isCollapsed ? t(item.labelKey) : undefined}
+                    >
+                      <Icon icon={item.icon} className={cn(
+                        'transition-transform duration-200',
+                        isCollapsed ? 'w-5 h-5' : 'w-5 h-5 mx-3',
+                        isActive && 'scale-110'
+                      )} />
+                      {!isCollapsed && (
+                        <span className={cn(
+                          'font-medium transition-all duration-200',
+                          isActive && 'font-semibold'
+                        )}>
+                          {t(item.labelKey)}
+                        </span>
+                      )}
+                      {/* Tooltip for collapsed state */}
+                      {isCollapsed && (
+                        <div className={cn(
+                          'absolute px-3 py-2 bg-gray-900 dark:bg-gray-700 text-white text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap z-50 shadow-lg',
+                          isRTL ? 'left-full ml-2' : 'right-full mr-2'
+                        )}>
+                          {t(item.labelKey)}
+                          <div className={cn(
+                            'absolute top-1/2 transform -translate-y-1/2 border-4 border-transparent',
+                            isRTL 
+                              ? 'left-0 translate-x-[-100%] border-l-gray-900 dark:border-l-gray-700'
+                              : 'right-0 translate-x-full border-r-gray-900 dark:border-r-gray-700'
+                          )}></div>
+                        </div>
+                      )}
+                    </Link>
+                  )
+                })}
+              </div>
             </div>
           </nav>
 
