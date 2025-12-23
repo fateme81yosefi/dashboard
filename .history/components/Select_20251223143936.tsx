@@ -74,9 +74,9 @@ export default function Select({
             </option>
           ))}
         </select>
-        <Icon 
-          icon="lucide:chevron-down"
+        <ChevronDown 
           className={`absolute ${iconPositionClass} top-1/2 transform -translate-y-1/2 w-5 h-5 pointer-events-none text-gray-400 dark:text-gray-500 z-10 ${disabled ? 'opacity-50' : ''}`}
+          aria-hidden="true"
         />
       </div>
     </div>

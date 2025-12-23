@@ -132,7 +132,7 @@ export default function ReportsSection() {
               <div className="flex items-center justify-between mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                 <div className="flex items-center space-x-4 space-x-reverse text-sm text-gray-600 dark:text-gray-400">
                   <span className="flex items-center space-x-1 space-x-reverse">
-                    <Icon icon="lucide:calendar" className="w-4 h-4 mx-2" />
+                    <Calendar className="w-4 h-4 mx-2" />
                     <span>{report.date}</span>
                   </span>
                   <span>{report.size}</span>
@@ -146,17 +146,17 @@ export default function ReportsSection() {
                     className="p-2 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
                     title={t('edit')}
                   >
-                    <Icon icon="lucide:edit" className="w-4 h-4" />
+                    <Edit className="w-4 h-4" />
                   </button>
                   <button 
                     onClick={() => handleDelete(report)}
                     className="p-2 bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 rounded-lg hover:bg-red-100 dark:hover:bg-red-900/30 transition-colors"
                     title={t('delete')}
                   >
-                    <Icon icon="lucide:trash-2" className="w-4 h-4" />
+                    <Trash2 className="w-4 h-4" />
                   </button>
                   <button className="p-2 bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-lg hover:bg-primary-100 dark:hover:bg-primary-900/30 transition-colors">
-                    <Icon icon="lucide:download" className="w-5 h-5" />
+                    <Download className="w-5 h-5" />
                   </button>
                 </div>
               </div>

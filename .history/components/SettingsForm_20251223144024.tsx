@@ -25,7 +25,7 @@ export default function SettingsForm() {
       {/* تنظیمات اعلان‌ها */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-all duration-300">
         <div className="flex items-center space-x-3 space-x-reverse mb-6">
-          <Icon icon="lucide:bell" className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+          <Bell className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             {t('notificationSettings')}
           </h2>
@@ -101,7 +101,7 @@ export default function SettingsForm() {
       {/* تنظیمات امنیتی */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-all duration-300">
         <div className="flex items-center space-x-3 space-x-reverse mb-6">
-          <Icon icon="lucide:shield" className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+          <Shield className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             {t('securitySettings')}
           </h2>
@@ -135,7 +135,7 @@ export default function SettingsForm() {
       {/* تنظیمات عمومی */}
       <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700 p-6 transition-all duration-300">
         <div className="flex items-center space-x-3 space-x-reverse mb-6">
-          <Icon icon="lucide:globe" className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+          <Globe className="w-6 h-6 text-primary-600 dark:text-primary-400" />
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             {t('generalSettings')}
           </h2>
@@ -167,7 +167,7 @@ export default function SettingsForm() {
       {/* دکمه ذخیره */}
       <div className="flex justify-end">
         <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium transition-colors flex items-center space-x-2 space-x-reverse">
-          <Icon icon="lucide:save" className="w-5 h-5" />
+          <Save className="w-5 h-5" />
           <span>{t('saveSettings')}</span>
         </button>
       </div>

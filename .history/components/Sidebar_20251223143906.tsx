@@ -52,7 +52,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
             {!isCollapsed && (
               <div className="flex items-center space-x-3 space-x-reverse flex-1">
                 <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg mx-3 flex items-center justify-center shadow-lg">
-                  <Icon icon="streamline-freehand:dashboard-layout" className="w-6 h-6 text-white" />
+                  <Icon icon="lucide:layout-dashboard" className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white truncate">
@@ -66,7 +66,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
             )}
             {isCollapsed && (
               <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center shadow-lg">
-                <Icon icon="streamline-freehand:dashboard-layout" className="w-6 h-6 text-white" />
+                <Icon icon="lucide:layout-dashboard" className="w-6 h-6 text-white" />
               </div>
             )}
             
@@ -80,9 +80,9 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
               title={isCollapsed ? 'باز کردن' : 'بستن'}
             >
               {isCollapsed ? (
-                isRTL ? <Icon icon="lucide:chevron-left" className="w-5 h-5" /> : <Icon icon="lucide:chevron-right" className="w-5 h-5" />
+                isRTL ? <ChevronLeft className="w-5 h-5" /> : <ChevronRight className="w-5 h-5" />
               ) : (
-                isRTL ? <Icon icon="lucide:chevron-right" className="w-5 h-5" /> : <Icon icon="lucide:chevron-left" className="w-5 h-5" />
+                isRTL ? <ChevronRight className="w-5 h-5" /> : <ChevronLeft className="w-5 h-5" />
               )}
             </button>
 
@@ -91,7 +91,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
               onClick={onClose}
               className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:text-gray-400"
             >
-              <Icon icon="lucide:x" className="w-5 h-5" />
+              <X className="w-5 h-5" />
             </button>
           </div>
 
@@ -102,6 +102,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
           )}>
             <div className={cn('space-y-2', isCollapsed && 'space-y-1')}>
               {menuItems.map((item) => {
+                const Icon = item.icon
                 const isActive = pathname === item.href
                 return (
                   <Link
@@ -122,7 +123,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
                     )}
                     title={isCollapsed ? t(item.labelKey) : undefined}
                   >
-                    <Icon icon={item.icon} className={cn(
+                    <Icon className={cn(
                       'transition-transform duration-200',
                       isCollapsed ? 'w-5 h-5' : 'w-5 h-5 mx-3',
                       isActive && 'scale-110'

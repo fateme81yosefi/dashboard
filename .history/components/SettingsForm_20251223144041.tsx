@@ -167,7 +167,7 @@ export default function SettingsForm() {
       {/* دکمه ذخیره */}
       <div className="flex justify-end">
         <button className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 rounded-lg font-medium transition-colors flex items-center space-x-2 space-x-reverse">
-          <Icon icon="lucide:save" className="w-5 h-5" />
+          <Save className="w-5 h-5" />
           <span>{t('saveSettings')}</span>
         </button>
       </div>

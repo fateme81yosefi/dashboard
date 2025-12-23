@@ -52,7 +52,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
             {!isCollapsed && (
               <div className="flex items-center space-x-3 space-x-reverse flex-1">
                 <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg mx-3 flex items-center justify-center shadow-lg">
-                  <Icon icon="streamline-freehand:dashboard-layout" className="w-6 h-6 text-white" />
+                  <Icon icon="streamline-freehand:dashboard-browser-gauge" className="w-6 h-6 text-white" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <h2 className="text-xl font-bold text-gray-900 dark:text-white truncate">
@@ -66,7 +66,7 @@ export default function Sidebar({ isOpen, isCollapsed, onClose, onToggle }: Side
             )}
             {isCollapsed && (
               <div className="w-10 h-10 bg-gradient-to-br from-primary-500 to-primary-700 rounded-lg flex items-center justify-center shadow-lg">
-                <Icon icon="streamline-freehand:dashboard-layout" className="w-6 h-6 text-white" />
+                <Icon icon="lucide:layout-dashboard" className="w-6 h-6 text-white" />
               </div>
             )}
             
